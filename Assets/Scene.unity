@@ -335,7 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f4915db0211d074699cd6b9f3cb47da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 10
+  healthBehavior: {fileID: 1902226472}
 --- !u!1 &364168290
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,7 +685,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100
+  m_Text: 0
 --- !u!222 &1250310211
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -706,6 +706,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6513b85eed40024487f630f0f2bd1a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBehaviour: {fileID: 1902226472}
 --- !u!1 &1554712626
 GameObject:
   m_ObjectHideFlags: 0
@@ -987,7 +988,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 708ec0befc336da408e6ae097af2e370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 100
+  OnChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  maxHealth: 50
 --- !u!4 &1902226473
 Transform:
   m_ObjectHideFlags: 0

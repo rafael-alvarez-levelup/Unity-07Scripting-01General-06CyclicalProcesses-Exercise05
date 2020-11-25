@@ -3,29 +3,27 @@ using UnityEngine.UI;
 
 public class HealthView : MonoBehaviour
 {
-    private Text _myText;
+    [SerializeField] private HealthBehaviour healthBehaviour;
 
-    private HealthBehavior _healthBehavior;
+    private Text myText;
 
     private void Awake()
     {
-        _myText = GetComponent<Text>();
-
-        _healthBehavior = FindObjectOfType<HealthBehavior>();
+        myText = GetComponent<Text>();
     }
 
     private void OnEnable()
     {
-        _healthBehavior.HealthChange += OnHealthChange;
+        healthBehaviour.OnChanged.AddListener(OnHealthChange);
     }
 
     private void OnDisable()
     {
-        _healthBehavior.HealthChange -= OnHealthChange;
+        healthBehaviour.OnChanged.RemoveListener(OnHealthChange);
     }
 
-    private void OnHealthChange(float health)
+    private void OnHealthChange(int health)
     {
-        _myText.text = health.ToString();
+        myText.text = health.ToString();
     }
 }
